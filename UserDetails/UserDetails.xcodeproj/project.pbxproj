@@ -19,6 +19,8 @@
 		0C4188A31E607FB20004EFA9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188A21E607FB20004EFA9 /* Extensions.swift */; };
 		0C4188AE1E60A5F70004EFA9 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188AC1E60A5F70004EFA9 /* UserDetailCell.swift */; };
 		0C4188AF1E60A5F70004EFA9 /* UserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4188AD1E60A5F70004EFA9 /* UserDetailCell.xib */; };
+		0C532AE21E6151E000DFD9C8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */; };
+		0C532AE31E6151E000DFD9C8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		0C4188A21E607FB20004EFA9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0C4188AC1E60A5F70004EFA9 /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
 		0C4188AD1E60A5F70004EFA9 /* UserDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailCell.xib; sourceTree = "<group>"; };
+		0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "UserDetails/User+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "UserDetails/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,8 @@
 		0C4188771E6077120004EFA9 = {
 			isa = PBXGroup;
 			children = (
+				0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */,
+				0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */,
 				0C4188821E6077120004EFA9 /* UserDetails */,
 				0C4188811E6077120004EFA9 /* Products */,
 			);
@@ -165,7 +171,9 @@
 				0C4188841E6077120004EFA9 /* AppDelegate.swift in Sources */,
 				0C4188AE1E60A5F70004EFA9 /* UserDetailCell.swift in Sources */,
 				0C41888C1E6077120004EFA9 /* UserDetails.xcdatamodeld in Sources */,
+				0C532AE21E6151E000DFD9C8 /* User+CoreDataClass.swift in Sources */,
 				0C41889B1E6077670004EFA9 /* UsersVC.swift in Sources */,
+				0C532AE31E6151E000DFD9C8 /* User+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +333,7 @@
 				0C4188971E6077120004EFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,17 +22,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-RZ-4IP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-RZ-4IP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="uQC-RZ-4IP" secondAttribute="bottom" id="DH8-Xu-ABo"/>
-                            <constraint firstItem="uQC-RZ-4IP" firstAttribute="left" secondItem="8bC-Xf-vdC" secondAttribute="left" id="Epx-OP-WEK"/>
-                            <constraint firstAttribute="right" secondItem="uQC-RZ-4IP" secondAttribute="right" id="SWa-Kr-5pu"/>
-                            <constraint firstItem="uQC-RZ-4IP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gkf-F4-fBh"/>
+                            <constraint firstItem="uQC-RZ-4IP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="PBo-zw-SFs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uQC-RZ-4IP" secondAttribute="trailing" constant="-16" id="ggR-5p-pjb"/>
+                            <constraint firstItem="uQC-RZ-4IP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jDr-5J-BSX"/>
+                            <constraint firstItem="uQC-RZ-4IP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="zFT-Mx-5Tr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Users" id="tmW-r6-SoN">
@@ -61,7 +62,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-Ka-Ebw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X7d-Ka-Ebw">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>

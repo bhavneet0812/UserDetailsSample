@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 extension UIView {
     
@@ -33,6 +34,8 @@ extension UIView {
         return cell as? UICollectionViewCell
     }
     
+    
+        
 }
 
 struct Xib {
