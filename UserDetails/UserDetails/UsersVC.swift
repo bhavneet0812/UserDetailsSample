@@ -113,10 +113,8 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
         
         let delete = UITableViewRowAction(style: .default, title: "Delete", handler: {(UITableViewRowAction, indexPath) -> Void in
             
-            self.userDetailVC.users.remove(at: indexPath.row)
-            
-            // delete the table view row
-            tableView.deleteRows(at: [indexPath], with: .fade)
+           // self.userDetailVC.users.remove(at: indexPath.row)
+           // tableView.deleteRows(at: [indexPath], with: .fade)
             
             let moc = self.getContext()
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
