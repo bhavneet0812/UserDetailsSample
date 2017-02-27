@@ -17,8 +17,9 @@
 		0C4188A01E60799C0004EFA9 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C41889E1E60799C0004EFA9 /* UserCell.swift */; };
 		0C4188A11E60799C0004EFA9 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C41889F1E60799C0004EFA9 /* UserCell.xib */; };
 		0C4188A31E607FB20004EFA9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188A21E607FB20004EFA9 /* Extensions.swift */; };
-		0C4188AE1E60A5F70004EFA9 /* UserDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188AC1E60A5F70004EFA9 /* UserDetailCell.swift */; };
-		0C4188AF1E60A5F70004EFA9 /* UserDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4188AD1E60A5F70004EFA9 /* UserDetailCell.xib */; };
+		0C4188AE1E60A5F70004EFA9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188AC1E60A5F70004EFA9 /* TableViewCell.swift */; };
+		0C4188AF1E60A5F70004EFA9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4188AD1E60A5F70004EFA9 /* TableViewCell.xib */; };
+		0C51FEC31E63F0A200C140A2 /* EditUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */; };
 		0C532AE21E6151E000DFD9C8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */; };
 		0C532AE31E6151E000DFD9C8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -36,8 +37,9 @@
 		0C41889E1E60799C0004EFA9 /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0C41889F1E60799C0004EFA9 /* UserCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCell.xib; sourceTree = "<group>"; };
 		0C4188A21E607FB20004EFA9 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		0C4188AC1E60A5F70004EFA9 /* UserDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailCell.swift; sourceTree = "<group>"; };
-		0C4188AD1E60A5F70004EFA9 /* UserDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailCell.xib; sourceTree = "<group>"; };
+		0C4188AC1E60A5F70004EFA9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		0C4188AD1E60A5F70004EFA9 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserVC.swift; sourceTree = "<group>"; };
 		0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "UserDetails/User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "UserDetails/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,12 +79,13 @@
 				0C4188831E6077120004EFA9 /* AppDelegate.swift */,
 				0C41889A1E6077670004EFA9 /* UsersVC.swift */,
 				0C41889C1E6077780004EFA9 /* UserDetailVC.swift */,
+				0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */,
 				0C4188871E6077120004EFA9 /* Main.storyboard */,
 				0C41888D1E6077120004EFA9 /* Assets.xcassets */,
 				0C41889E1E60799C0004EFA9 /* UserCell.swift */,
 				0C41889F1E60799C0004EFA9 /* UserCell.xib */,
-				0C4188AC1E60A5F70004EFA9 /* UserDetailCell.swift */,
-				0C4188AD1E60A5F70004EFA9 /* UserDetailCell.xib */,
+				0C4188AC1E60A5F70004EFA9 /* TableViewCell.swift */,
+				0C4188AD1E60A5F70004EFA9 /* TableViewCell.xib */,
 				0C41888F1E6077120004EFA9 /* LaunchScreen.storyboard */,
 				0C4188A21E607FB20004EFA9 /* Extensions.swift */,
 				0C4188921E6077120004EFA9 /* Info.plist */,
@@ -153,7 +156,7 @@
 				0C4188911E6077120004EFA9 /* LaunchScreen.storyboard in Resources */,
 				0C4188A11E60799C0004EFA9 /* UserCell.xib in Resources */,
 				0C41888E1E6077120004EFA9 /* Assets.xcassets in Resources */,
-				0C4188AF1E60A5F70004EFA9 /* UserDetailCell.xib in Resources */,
+				0C4188AF1E60A5F70004EFA9 /* TableViewCell.xib in Resources */,
 				0C4188891E6077120004EFA9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,7 +172,8 @@
 				0C4188A31E607FB20004EFA9 /* Extensions.swift in Sources */,
 				0C41889D1E6077780004EFA9 /* UserDetailVC.swift in Sources */,
 				0C4188841E6077120004EFA9 /* AppDelegate.swift in Sources */,
-				0C4188AE1E60A5F70004EFA9 /* UserDetailCell.swift in Sources */,
+				0C4188AE1E60A5F70004EFA9 /* TableViewCell.swift in Sources */,
+				0C51FEC31E63F0A200C140A2 /* EditUserVC.swift in Sources */,
 				0C41888C1E6077120004EFA9 /* UserDetails.xcdatamodeld in Sources */,
 				0C532AE21E6151E000DFD9C8 /* User+CoreDataClass.swift in Sources */,
 				0C41889B1E6077670004EFA9 /* UsersVC.swift in Sources */,

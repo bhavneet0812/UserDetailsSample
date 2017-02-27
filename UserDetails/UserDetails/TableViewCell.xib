@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="8cA-90-ot0" userLabel="User Details Cell" customClass="UserDetailCell" customModule="UserDetails" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="8cA-90-ot0" userLabel="User Details Cell" customClass="TableViewCell" customModule="UserDetails" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -30,7 +30,7 @@
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <accessibility key="accessibilityConfiguration" identifier="UserDetailCellID"/>
+            <accessibility key="accessibilityConfiguration" identifier="TableViewCellID"/>
             <constraints>
                 <constraint firstItem="geK-mG-U6Z" firstAttribute="leading" secondItem="8cA-90-ot0" secondAttribute="leading" id="1xK-JT-6i2"/>
                 <constraint firstItem="WiK-mn-ud8" firstAttribute="leading" secondItem="8cA-90-ot0" secondAttribute="leading" id="YNV-th-btj"/>
@@ -46,7 +46,7 @@
                 <outlet property="detailLabel" destination="geK-mG-U6Z" id="bTf-Th-PCD"/>
                 <outlet property="detailTField" destination="WiK-mn-ud8" id="wZw-bd-P5i"/>
             </connections>
-            <point key="canvasLocation" x="125.5" y="-167.5"/>
+            <point key="canvasLocation" x="125.5" y="-168"/>
         </view>
     </objects>
 </document>

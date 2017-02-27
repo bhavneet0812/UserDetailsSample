@@ -8,12 +8,16 @@
 
 import UIKit
 
-class UserDetailCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
+    
+// MARK: IBOutlets
     
     @IBOutlet weak var detailLabel: UILabel!
     
     @IBOutlet weak var detailTField: UITextField!
 
+// MARK: UserDetailsCell Lif Cycle
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,5 +28,5 @@ class UserDetailCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

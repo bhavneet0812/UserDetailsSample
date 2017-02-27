@@ -15,6 +15,8 @@ class UsersVC: UIViewController {
     
     let UserCell = Xib(name: "UserCell", id: "UserCellID")
     let userDetailVC = UserDetailVC()
+    let editUserVC = EditUserVC()
+    
 
 // MARK: IBOutlets
 
@@ -83,6 +85,11 @@ class UsersVC: UIViewController {
         
         usersTable.reloadData()
     }
+    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
 }
 
 // MARK: userTable - Delegate and Datasource Methods
@@ -111,35 +118,39 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let delete = UITableViewRowAction(style: .default, title: "Delete", handler: {(UITableViewRowAction, indexPath) -> Void in
-            
-           // self.userDetailVC.users.remove(at: indexPath.row)
-           // tableView.deleteRows(at: [indexPath], with: .fade)
-            
-            let moc = self.getContext()
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
-            
-            let result = try? moc.fetch(fetchRequest)
-            let resultData = result as! [User]
-            
-            for object in resultData {
-                moc.delete(object)
-            }
-            
-            do {
-                try moc.save()
-                print("saved!")
-            } catch let error as NSError  {
-                print("Could not save \(error), \(error.userInfo)")
-            } catch {
-                
-            }
-            
-            
+        let delete = UITableViewRowAction(style: .default,
+                                          title: "Delete",
+                                          handler: {(UITableViewRowAction, indexPath) -> Void in
+                                            
+                                            self.userDetailVC.users.remove(at: indexPath.row)
+                                            tableView.deleteRows(at: [indexPath], with: .fade)
+                                            
+                                            let moc = self.getContext()
+                                            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+                                            
+                                            let result = try? moc.fetch(fetchRequest)
+                                            let resultData = result as! [User]
+                                            
+                                            let object = resultData[indexPath.row]
+                                            
+                                            moc.delete(object)
+                                            
+                                            do {
+                                                try moc.save()
+                                                print("saved!")
+                                            } catch let error as NSError  {
+                                                print("Could not save \(error), \(error.userInfo)")
+                                            } catch {
+                                                
+                                            }
+                                            
+                                            
         })
         
         let edit = UITableViewRowAction(style: .default, title: "Edit",
                                         handler: {(UITableViewRowAction, indexPath) -> Void in
+                                            
+                                            self.editUserVC.editIndex = indexPath
                                             
                                             let moc = self.getContext()
                                             
@@ -149,14 +160,18 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
                                             
                                             let resultData = result as! [User]
                                             
-                                            for object in resultData {
-                                                
-                                                object.firstName! = "\(object.firstName!) Joshi"
-                                                
-                                                print(object.firstName!)
-                                                
-                                            }
+                                            let object = resultData[indexPath.row]
                                             
+                                            self.editUserVC.editData.firstName = object.firstName!
+                                            self.editUserVC.editData.lastName = object.lastName!
+                                            self.editUserVC.editData.userName = object.userName!
+                                            self.editUserVC.editData.email = object.email!
+                                            self.editUserVC.editData.password = object.password!
+                                            self.editUserVC.editData.age = Int(object.age)
+                                            self.editUserVC.editData.dob = object.dob!
+                                            self.editUserVC.editData.phone = object.phone
+                                            self.editUserVC.editData.address = object.address!
+                                                
                                             do{
                                                 
                                                 try moc.save()
@@ -168,16 +183,22 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
                                                 print("Could not save \(error), \(error.userInfo)")
                                                 
                                             }
+                                            let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID")
+                                            self.navigationController?.pushViewController(editVC!, animated: true)
                                             
         })
         
         return [delete, edit]
 
     }
-
-    func getContext () -> NSManagedObjectContext {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return appDelegate.persistentContainer.viewContext
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.editUserVC.text = .no
+        
+        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID")
+        self.navigationController?.pushViewController(editVC!, animated: true)
+        
     }
 
 }

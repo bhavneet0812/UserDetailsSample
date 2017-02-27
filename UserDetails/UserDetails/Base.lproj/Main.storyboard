@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-RZ-4IP">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQC-RZ-4IP">
                                 <rect key="frame" x="0.0" y="64" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -92,6 +92,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vag-Li-oCc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1696.8" y="498.80059970014997"/>
+        </scene>
+        <!--Edit Details-->
+        <scene sceneID="esF-FE-VtZ">
+            <objects>
+                <viewController storyboardIdentifier="EditUserID" id="u1t-OG-btZ" customClass="EditUserVC" customModule="UserDetails" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zx7-8U-Zqz"/>
+                        <viewControllerLayoutGuide type="bottom" id="ecN-3h-CCj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qNj-Ef-qCW">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oce-fN-ZKO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ecN-3h-CCj" firstAttribute="top" secondItem="oce-fN-ZKO" secondAttribute="bottom" id="5Jl-qo-Xct"/>
+                            <constraint firstAttribute="right" secondItem="oce-fN-ZKO" secondAttribute="right" id="iL5-wX-eJO"/>
+                            <constraint firstItem="oce-fN-ZKO" firstAttribute="top" secondItem="zx7-8U-Zqz" secondAttribute="bottom" id="iky-o9-ENQ"/>
+                            <constraint firstItem="oce-fN-ZKO" firstAttribute="left" secondItem="qNj-Ef-qCW" secondAttribute="left" id="s0r-S9-yQa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Details" id="7Kk-iP-PDg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="upp-yU-V2l">
+                            <connections>
+                                <action selector="editDoneBtn:" destination="u1t-OG-btZ" id="2xJ-CH-Ngo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="editDoneBtn" destination="upp-yU-V2l" id="mfx-Px-Fs2"/>
+                        <outlet property="editTable" destination="oce-fN-ZKO" id="KWY-Et-6mm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xn5-oc-a1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2425" y="499"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0F2-9L-j10">
