@@ -18,6 +18,10 @@ class EditUserVC: UIViewController {
     var editData = Database()
     var editIndex : IndexPath? = nil
     var text : TFieldEditable = .yes
+    var person : User! = nil
+    var personIndex = Int()
+    var dbHelper = DBHelper()
+    
     
 // MARK: IBOutlets
     
@@ -46,10 +50,11 @@ class EditUserVC: UIViewController {
     
     @IBAction func editDoneBtn(_ sender: UIBarButtonItem) {
         
-        if let x = editIndex {
-        updateData(index: x)
-        let _ = navigationController?.popViewController(animated: true)
-        }
+            dbHelper.editAtUser(person, personIndex)
+        
+        
+       
+            let _ = navigationController?.popViewController(animated: true)
         
     }
     
@@ -70,7 +75,7 @@ class EditUserVC: UIViewController {
         object.userName = editData.userName
         object.email = editData.email
         object.password = editData.password
-        object.age = Int32(editData.age)
+        object.age = editData.age
         object.dob = editData.dob
         object.phone = editData.phone
         object.address = editData.address
@@ -119,60 +124,60 @@ extension EditUserVC : UITableViewDelegate, UITableViewDataSource {
         case 0:
             
             cell.detailLabel.text = "First Name"
-            cell.detailTField.text = editData.firstName
+            cell.detailTField.text = person.firstName
             cell.detailTField.autocapitalizationType = .words
             
         case 1:
             
             cell.detailLabel.text = "Last Name"
-            cell.detailTField.text = editData.lastName
+            cell.detailTField.text = person.lastName
             cell.detailTField.autocapitalizationType = .words
             
         case 2:
             
             cell.detailLabel.text = "Username"
-            cell.detailTField.text = editData.userName
+            cell.detailTField.text = person.userName
             
         case 3:
             
             cell.detailLabel.text = "Email"
-            cell.detailTField.text = editData.email
+            cell.detailTField.text = person.email
             
         case 4:
             
             cell.detailLabel.text = "Password"
-            cell.detailTField.text = editData.password
+            cell.detailTField.text = person.password
             cell.detailTField.isSecureTextEntry = true
             
         case 5:
             
             cell.detailLabel.text = "Re-Enter Password"
-            cell.detailTField.text = editData.password
+            cell.detailTField.text = person.password
             cell.detailTField.isSecureTextEntry = true
             
         case 6:
             
             cell.detailLabel.text = "Age"
-            cell.detailTField.text = String(editData.age)
+            cell.detailTField.text = String(person.age)
             cell.detailTField.keyboardType = .numberPad
             
             
         case 7:
             
             cell.detailLabel.text = "Date Of Birth"
-            cell.detailTField.text = editData.dob
+            cell.detailTField.text = person.dob
             
         case 8:
             
             cell.detailLabel.text = "Phone No."
-            cell.detailTField.text = String(editData.phone)
+            cell.detailTField.text = String(person.phone)
             cell.detailTField.keyboardType = .phonePad
             
             
         default:
             
             cell.detailLabel.text = "Address"
-            cell.detailTField.text = editData.address
+            cell.detailTField.text = person.address
             cell.detailTField.autocapitalizationType = .words
             
         }
@@ -199,58 +204,58 @@ extension EditUserVC : UITextFieldDelegate {
         switch index!.row {
         case 0:
             
-            editData.firstName = textField.text!
+            person.firstName = textField.text!
             print(#function)
             
         case 1:
             
-            editData.lastName = textField.text!
+            person.lastName = textField.text!
             print(#function)
             
         case 2:
             
-            editData.userName = textField.text!
+            person.userName = textField.text!
             print(#function)
             
         case 3:
             
-            editData.email = textField.text!
+            person.email = textField.text!
             print(#function)
             
         case 4:
             
-            editData.password = textField.text!
+            person.password = textField.text!
             print(#function)
             
         case 5:
             
-            if textField.text != editData.password {
+            if textField.text != person.password {
                 //                let alert = UIAlertController(title: "Password Mismatch", message: "Re-Enter Password", preferredStyle: .alert)
                 //                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
                 //                alert.addAction(action)
                 //                alert.present(alert, animated: true, completion: { textField.text = "" })
-                editData.password = ""
+                person.password = ""
             }
             print(#function)
             
         case 6:
             
-            editData.age = Int(textField.text!)!
+            person.age = Int(textField.text!)!
             print(#function)
             
         case 7:
             
-            editData.dob = textField.text!
+            person.dob = textField.text!
             print(#function)
             
         case 8:
             
-            editData.phone = Int64(textField.text!)!
+            person.phone = Int64(textField.text!)!
             print(#function)
             
         default:
             
-            editData.address = textField.text!
+            person.address = textField.text!
             print(#function)
             
         }

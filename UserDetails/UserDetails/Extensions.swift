@@ -80,7 +80,9 @@ enum TFieldEditable {
     case no
 }
 
-var editIndex : IndexPath? = nil
+class Index {
+    var indexpath : IndexPath? = nil
+}
 
 //(UITableViewRowAction, indexPath) -> Void in
 //

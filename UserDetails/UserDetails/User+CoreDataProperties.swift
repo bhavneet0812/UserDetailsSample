@@ -21,7 +21,7 @@ extension User {
     @NSManaged public var userName: String?
     @NSManaged public var email: String?
     @NSManaged public var password: String?
-    @NSManaged public var age: Int32
+    @NSManaged public var age: Int
     @NSManaged public var dob: String?
     @NSManaged public var phone: Int64
     @NSManaged public var address: String?

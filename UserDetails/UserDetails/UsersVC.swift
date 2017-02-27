@@ -14,7 +14,11 @@ class UsersVC: UIViewController {
 // MARK: Variables
     
     let UserCell = Xib(name: "UserCell", id: "UserCellID")
+    
+    let dbHelper = DBHelper()
+    
     let userDetailVC = UserDetailVC()
+    
     let editUserVC = EditUserVC()
     
 
@@ -37,6 +41,8 @@ class UsersVC: UIViewController {
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+        
+        dbHelper.getData()
         
         self.automaticallyAdjustsScrollViewInsets = false
         
@@ -150,41 +156,22 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
         let edit = UITableViewRowAction(style: .default, title: "Edit",
                                         handler: {(UITableViewRowAction, indexPath) -> Void in
                                             
-                                            self.editUserVC.editIndex = indexPath
+                                            let row = indexPath.row
                                             
-                                            let moc = self.getContext()
+                                            let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID") as? EditUserVC
                                             
-                                            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+                                            editVC?.person = self.dbHelper.users[row]
                                             
-                                            let result = try? moc.fetch(fetchRequest)
-                                            
-                                            let resultData = result as! [User]
-                                            
-                                            let object = resultData[indexPath.row]
-                                            
-                                            self.editUserVC.editData.firstName = object.firstName!
-                                            self.editUserVC.editData.lastName = object.lastName!
-                                            self.editUserVC.editData.userName = object.userName!
-                                            self.editUserVC.editData.email = object.email!
-                                            self.editUserVC.editData.password = object.password!
-                                            self.editUserVC.editData.age = Int(object.age)
-                                            self.editUserVC.editData.dob = object.dob!
-                                            self.editUserVC.editData.phone = object.phone
-                                            self.editUserVC.editData.address = object.address!
-                                                
-                                            do{
-                                                
-                                                try moc.save()
-                                                
-                                                print("saved")
-                                                
-                                            }catch let error as NSError {
-                                                
-                                                print("Could not save \(error), \(error.userInfo)")
-                                                
-                                            }
-                                            let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID")
                                             self.navigationController?.pushViewController(editVC!, animated: true)
+                                            
+                                            editVC?.personIndex = row
+                                            
+                                            editVC?.dbHelper = self.dbHelper
+                                        
+                                            
+ 
+                                            
+                                            
                                             
         })
         
@@ -196,7 +183,12 @@ extension UsersVC : UITableViewDelegate, UITableViewDataSource {
         
         self.editUserVC.text = .no
         
-        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID")
+        let row = indexPath.row
+        
+        let editVC = self.storyboard?.instantiateViewController(withIdentifier: "EditUserID") as? EditUserVC
+    
+        editVC?.person = dbHelper.users[row]
+        
         self.navigationController?.pushViewController(editVC!, animated: true)
         
     }

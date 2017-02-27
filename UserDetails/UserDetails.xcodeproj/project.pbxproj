@@ -20,6 +20,7 @@
 		0C4188AE1E60A5F70004EFA9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4188AC1E60A5F70004EFA9 /* TableViewCell.swift */; };
 		0C4188AF1E60A5F70004EFA9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C4188AD1E60A5F70004EFA9 /* TableViewCell.xib */; };
 		0C51FEC31E63F0A200C140A2 /* EditUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */; };
+		0C51FEC91E64305D00C140A2 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C51FEC81E64305D00C140A2 /* DBHelper.swift */; };
 		0C532AE21E6151E000DFD9C8 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */; };
 		0C532AE31E6151E000DFD9C8 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		0C4188AC1E60A5F70004EFA9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		0C4188AD1E60A5F70004EFA9 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditUserVC.swift; sourceTree = "<group>"; };
+		0C51FEC81E64305D00C140A2 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		0C532AE01E6151E000DFD9C8 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataClass.swift"; path = "UserDetails/User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0C532AE11E6151E000DFD9C8 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "User+CoreDataProperties.swift"; path = "UserDetails/User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 				0C41889A1E6077670004EFA9 /* UsersVC.swift */,
 				0C41889C1E6077780004EFA9 /* UserDetailVC.swift */,
 				0C51FEC21E63F0A200C140A2 /* EditUserVC.swift */,
+				0C51FEC81E64305D00C140A2 /* DBHelper.swift */,
 				0C4188871E6077120004EFA9 /* Main.storyboard */,
 				0C41888D1E6077120004EFA9 /* Assets.xcassets */,
 				0C41889E1E60799C0004EFA9 /* UserCell.swift */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C51FEC91E64305D00C140A2 /* DBHelper.swift in Sources */,
 				0C4188A01E60799C0004EFA9 /* UserCell.swift in Sources */,
 				0C4188A31E607FB20004EFA9 /* Extensions.swift in Sources */,
 				0C41889D1E6077780004EFA9 /* UserDetailVC.swift in Sources */,

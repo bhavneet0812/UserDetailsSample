@@ -16,6 +16,10 @@ class UserDetailVC: UIViewController {
     let UserDetailCell = Xib(name: "TableViewCell", id: "TableViewCellID")
     var users = [User]()
     var userData = Database()
+    var dbHelper = DBHelper()
+    
+
+
     
 // MARK: IBOutlets
 
@@ -40,39 +44,9 @@ class UserDetailVC: UIViewController {
 // MARK: IBActions
 
     @IBAction func doneBtn(_ sender: UIBarButtonItem) {
+
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let entity = NSEntityDescription.entity(forEntityName: "User",
-                                                in: managedContext)!
-        
-        let user = User(entity: entity,
-                            insertInto: managedContext)
-        
-        user.firstName = userData.firstName //setValue(name, forKeyPath: "name")
-        user.lastName = userData.lastName
-        user.userName = userData.userName
-        user.email = userData.email
-        user.password = userData.password
-        user.age = Int32(userData.age)
-        user.dob = userData.dob
-        user.phone = userData.phone
-        user.address = userData.address
-        
-        do {
-            try managedContext.save()
-            
-            users.append(user)
-            
-        } catch let error as NSError {
-            
-            print("Could not save. \(error), \(error.userInfo)")
-            
-        }
+        dbHelper.saveData()
         
         let _ = navigationController?.popViewController(animated: true)
         
@@ -179,32 +153,32 @@ extension UserDetailVC : UITextFieldDelegate {
         switch index!.row {
         case 0:
             
-            userData.firstName = textField.text!
+            dbHelper.firstName = textField.text!
             print(#function)
             
         case 1:
             
-            userData.lastName = textField.text!
+            dbHelper.lastName = textField.text!
             print(#function)
 
         case 2:
             
-            userData.userName = textField.text!
+            dbHelper.userName = textField.text!
             print(#function)
             
         case 3:
             
-            userData.email = textField.text!
+            dbHelper.email = textField.text!
             print(#function)
 
         case 4:
             
-            userData.password = textField.text!
+            dbHelper.password = textField.text!
             print(#function)
 
         case 5:
             
-            if textField.text != userData.password {
+            if textField.text != dbHelper.password {
 //                let alert = UIAlertController(title: "Password Mismatch", message: "Re-Enter Password", preferredStyle: .alert)
 //                let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
 //                alert.addAction(action)
@@ -215,22 +189,22 @@ extension UserDetailVC : UITextFieldDelegate {
 
         case 6:
 
-            userData.age = Int(textField.text!)!
+            dbHelper.age = Int(textField.text!)!
             print(#function)
 
         case 7:
             
-            userData.dob = textField.text!
+            dbHelper.dob = textField.text!
             print(#function)
 
         case 8:
             
-            userData.phone = Int64(textField.text!)!
+            dbHelper.phone = Int64(textField.text!)!
             print(#function)
 
         default:
             
-            userData.address = textField.text!
+            dbHelper.address = textField.text!
             print(#function)
 
         }
